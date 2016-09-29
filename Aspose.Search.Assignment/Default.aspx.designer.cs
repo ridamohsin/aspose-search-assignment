@@ -13,13 +13,58 @@ namespace Aspose.Search.Assignment {
     public partial class _Default {
         
         /// <summary>
-        /// SearchKeyWordTextBox control.
+        /// SearchTerm1TextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SearchKeyWordTextBox;
+        protected global::System.Web.UI.WebControls.TextBox SearchTerm1TextBox;
+        
+        /// <summary>
+        /// RequiredSearchFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredSearchFieldValidator;
+        
+        /// <summary>
+        /// BooleanStringValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator BooleanStringValidator;
+        
+        /// <summary>
+        /// SearchTerm2TextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SearchTerm2TextBox;
+        
+        /// <summary>
+        /// RequiredSearchField2Validator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredSearchField2Validator;
+        
+        /// <summary>
+        /// BooleanStringValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator BooleanStringValidator2;
         
         /// <summary>
         /// SearchTypeDropDownList control.

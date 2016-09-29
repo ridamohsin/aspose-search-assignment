@@ -9,6 +9,7 @@ namespace Aspose.Search.Assignment.Models
     {
         public string FileName { get; set; }
         public int HitCount { get; set; }
+        public string SearchTerm { get; set; }
         
     }
 }
