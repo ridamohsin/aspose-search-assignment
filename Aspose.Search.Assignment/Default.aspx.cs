@@ -43,8 +43,8 @@ namespace Aspose.Search.Assignment
         protected void SearchSubmitButton_Click(object sender, EventArgs e)
         {
             //get the search terms value from the text boxes
-            string searchTerm1 = SearchTerm1TextBox.Text != null ? SearchTerm1TextBox.Text.Trim().ToString() : string.Empty;
-            string searchTerm2 = SearchTerm2TextBox.Text != null ? SearchTerm2TextBox.Text.Trim().ToString() : string.Empty;
+            string searchTerm1 = !(string.IsNullOrWhiteSpace(SearchTerm1TextBox.Text)) ? SearchTerm1TextBox.Text.Trim().ToString() : string.Empty;
+            string searchTerm2 = !(string.IsNullOrWhiteSpace(SearchTerm2TextBox.Text))  ? SearchTerm2TextBox.Text.Trim().ToString() : string.Empty;
             //initialize the results list as empty listview
             ResultsListView.DataSource = null;
             ResultsListView.DataBind();
