@@ -1,5 +1,5 @@
 # aspose-search-assignment
-A technical evaluation Assignment for Aspose that carries out different types of searches 
+A technical evaluation Assignment for Aspose that carries out different types of searches    
 The main purpose of this application is to use GroupDocs.Search API for .Net to perform three types of search namely Simple, Boolean and Regex.   
 The user can select the type of the search he wants to perform and the application performs that search and shows the results of that search in the same page.  
 
@@ -24,7 +24,7 @@ switch (searchType)
 
 ## API Reference
 
-This application makes use of the **GroupDocs.Search API for .Net v1.2.0**  ([Download Link] )(http://www.groupdocs.com/downloads/search/net) to perform the search on documents
+This application makes use of the **GroupDocs.Search API for .Net v1.2.0**  [Download Link](http://www.groupdocs.com/downloads/search/net) to perform the search on documents
 
 
 ##Resources:
