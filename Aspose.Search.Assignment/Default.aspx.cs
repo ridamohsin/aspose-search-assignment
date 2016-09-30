@@ -31,6 +31,7 @@ namespace Aspose.Search.Assignment
                                                     };
                 SearchTypeDropDownList.DataBind();
                 searchType = Helpers.CommonValues.SimpleSearch;
+                SearchTerm1TextBox.Attributes.Add("placeholder", CommonValues.SimplePlaceHolder);
             }
 
 
@@ -42,13 +43,14 @@ namespace Aspose.Search.Assignment
         protected void SearchSubmitButton_Click(object sender, EventArgs e)
         {
             //get the search terms value from the text boxes
-            string searchTerm1 = SearchTerm1TextBox.Text.Trim().ToString();
-            string searchTerm2 = SearchTerm2TextBox.Text != null ? SearchTerm2TextBox.Text.Trim().ToString():String.Empty;
+            string searchTerm1 = SearchTerm1TextBox.Text != null ? SearchTerm1TextBox.Text.Trim().ToString() : string.Empty;
+            string searchTerm2 = SearchTerm2TextBox.Text != null ? SearchTerm2TextBox.Text.Trim().ToString() : string.Empty;
             //initialize the results list as empty listview
             ResultsListView.DataSource = null;
             ResultsListView.DataBind();
             List<Document> searchResults = new List<Document>();
-            string[] searchTerms = new string[2];
+            string[] searchTerms = new string[2];//although this could have been made a list of strings or initialized as a bigger array but since we need just two strings
+            // so we are initiliaznig it as such   
             //fetch search results on the basis of search type
             switch (searchType)
             {
@@ -73,9 +75,19 @@ namespace Aspose.Search.Assignment
         protected void SearchTypeChanged(object sender, EventArgs e)
         {
             searchType = SearchTypeDropDownList.SelectedValue.ToString();
-            ControlSearchTextBoxesVisibility();
+            UpdateUI();
         }
 
+        /// <summary>
+        /// Calls all the necessary UI based code updates on search type change
+        /// </summary>
+        private void UpdateUI()
+        {
+            ControlSearchTextBoxesVisibility();
+            UpdatePlaceHolderText();
+        }
+
+        
         /// <summary>
         /// Controls how the visibility of search text boxes is handled
         /// </summary>
@@ -86,7 +98,6 @@ namespace Aspose.Search.Assignment
             {
                 case CommonValues.SimpleSearch:
                     SearchTerm2TextBox.Visible = false;
-                    SearchTerm2TextBox.Text=null;
                     RequiredSearchField2Validator.Visible = false;
                     break;
                 case CommonValues.BooleanSearch:
@@ -96,6 +107,30 @@ namespace Aspose.Search.Assignment
                 case CommonValues.RegexSearch:
                     SearchTerm2TextBox.Visible = true;
                     RequiredSearchField2Validator.Visible = true;
+                    break;
+            }
+        }
+
+        private void UpdatePlaceHolderText()
+        {
+            //clear the previously searched terms on selection change
+            SearchTerm1TextBox.Text = null;
+            SearchTerm2TextBox.Text = null;
+            SearchTerm1TextBox.Attributes.Remove("placeholder");
+            SearchTerm2TextBox.Attributes.Remove("placeholder");
+            //change the place holder text for different type of search actions
+            switch (searchType)
+            {
+                case CommonValues.SimpleSearch:
+                    SearchTerm1TextBox.Attributes.Add("placeholder", CommonValues.SimplePlaceHolder);
+                    break;
+                case CommonValues.BooleanSearch:
+                    SearchTerm1TextBox.Attributes.Add("placeholder", CommonValues.BooleanFirstTermPlaceHolder);
+                    SearchTerm2TextBox.Attributes.Add("placeholder",CommonValues.BooleanSecondTermPlaceHolder);
+                    break;
+                case CommonValues.RegexSearch:
+                    SearchTerm1TextBox.Attributes.Add("placeholder", CommonValues.RegexFirstTermPlaceHolder);
+                    SearchTerm2TextBox.Attributes.Add("placeholder", CommonValues.RegexSecondTermPlaceHolder);
                     break;
             }
         }

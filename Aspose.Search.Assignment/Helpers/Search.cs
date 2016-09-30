@@ -51,20 +51,30 @@ namespace Aspose.Search.Assignment.Helpers
         /// </summary>
         /// <param name="relevantKey">single keyword</param>
         /// <param name="regexString">regex</param>
-        public static List<Document> RegexSearch(string relevantKey, string regexString)
+        public static List<Document> RegexSearch(string relevantKey = "", string regexString = "")
         {
             // Create index and add documents to index
             Index index = CreateDocumentIndex();
 
-            // Search for documents based on the relevent key
-            SearchResults searchResults1 = index.Search(relevantKey);
+            List<Document> releventKeyResults = new List<Document>();
+            List<Document> regexStringResults = new List<Document>();
+
+            //if value of relevence key isnt empty perform search based on it
+            if (relevantKey != "") {
+                // Search for documents based on the relevent key
+                SearchResults releventKeySearchResults = index.Search(relevantKey);
+                //Generate a list of documents from the search results for relevent key
+                releventKeyResults = releventKeySearchResults.Count > 0 ? GenerateDocumentList(releventKeySearchResults, "Relevent Key (" + relevantKey + ") Based Results") : GenerateEmptyResult("Relevent Key(" + relevantKey + ") Based Results");
+            }
+                
+                
 
             //Search for documents based on the regex string
-            SearchResults searchResults2 = index.Search(regexString);
+            SearchResults regexStringSearchResults = index.Search(regexString);
 
             //Generate a list of documents from the search results for both relevent key and regex string
-            List<Document> releventKeyResults = searchResults1.Count > 0 ? GenerateDocumentList(searchResults1, "Relevent Key (" + relevantKey + ") Based Results") : GenerateEmptyResult("Relevent Key(" + relevantKey + ") Based Results");
-            List<Document> regexStringResults = searchResults2.Count > 0 ? GenerateDocumentList(searchResults2, "Regex String (" + regexString + ") Based Results") : GenerateEmptyResult("Regex String(" + regexString + ") Based Results"); ;
+            
+            regexStringResults = regexStringSearchResults.Count > 0 ? GenerateDocumentList(regexStringSearchResults, "Regex String (" + regexString + ") Based Results") : GenerateEmptyResult("Regex String(" + regexString + ") Based Results"); ;
 
             //combine the results in a single list
             List<Document> documentList = releventKeyResults.Concat(regexStringResults).ToList();

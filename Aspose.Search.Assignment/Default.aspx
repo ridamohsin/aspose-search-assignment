@@ -17,7 +17,7 @@
             <div class="form-group">
                 <div class="col-md-3">
                     <asp:Label Text="Search Term" runat="server" Font-Bold="True"></asp:Label>
-                    <asp:TextBox ID="SearchTerm1TextBox" CssClass="form-control search-term" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="SearchTerm1TextBox"  CssClass="form-control search-term" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredSearchFieldValidator" runat="server" CssClass="required-second-term"
                         ControlToValidate="SearchTerm1TextBox"
                         ErrorMessage="Required. Please Enter the term to search."
