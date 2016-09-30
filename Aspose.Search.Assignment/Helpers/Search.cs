@@ -80,11 +80,12 @@ namespace Aspose.Search.Assignment.Helpers
         private static Index CreateDocumentIndex()
         {
             // Create index
-            Index index = new Index(CommonUtilities.indexPath);
+            Index index = new Index(CommonValues.indexPath);
             //adding a test custom extractor
             index.CustomExtractors.Add(new CustomizedFieldExtractor());
             // adding all files from folder and its subfolders to the index
-            index.AddToIndex(CommonUtilities.documentsDir);
+            index.AddToIndex(CommonValues.documentsDir);
+            index.Update();
             return index;
         }
 

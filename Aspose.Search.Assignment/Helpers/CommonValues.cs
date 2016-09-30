@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Aspose.Search.Assignment.Helpers
 {
-    public class CommonUtilities
+    public class CommonValues
     {
         public static string dataDir = AppDomain.CurrentDomain.GetData("DataDirectory").ToString(); // App_Data folder path
         public static string documentsDir = AppDomain.CurrentDomain.GetData("DataDirectory")+ "\\DocumentsDirectory"; //path where documents are kept

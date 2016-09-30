@@ -1,13 +1,22 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Aspose.Search.Assignment._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="alert alert-info" role="alert">
+        Path of folder with sample documents: <%= Aspose.Search.Assignment.Helpers.CommonValues.documentsDir.ToString() %> 
+    </div>
     <div class="container" id="SearchInterface">
         <h1 class="lead margin-top-10">Perform Different types of Search</h1>
+        <ul>
+            <li>Enter a keyword to perform simple search</li>
+            <li>Enter two expression enclosed in square brackets e-g (term1 AND term2) in each of the two search boxes for boolean search </li>
+            <li>Enter a relevent key in first search box and a regex string in second search box for regex search</li>
+        </ul>
+        <p style="clear:both"></p>
         <div class="panel panel-default">
             <div class="panel-body">
-            <%--<form runat="server" class="form-inline">--%>
             <div class="form-group">
                 <div class="col-md-3">
+                    <asp:Label Text="Search Term" runat="server" Font-Bold="True"></asp:Label>
                     <asp:TextBox ID="SearchTerm1TextBox" CssClass="form-control search-term" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredSearchFieldValidator" runat="server" CssClass="required-second-term"
                         ControlToValidate="SearchTerm1TextBox"
@@ -19,8 +28,6 @@
                         ErrorMessage="Not a boolean expression"
                         ForeColor="Red"
                         ClientValidationFunction="validateBoolean" Display="Dynamic"></asp:CustomValidator>
-                </div>
-                <div class="col-md-3">
                     <asp:TextBox ID="SearchTerm2TextBox" CssClass="form-control search-term second-term" Visible="false" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredSearchField2Validator" runat="server"
                         ControlToValidate="SearchTerm2TextBox"
@@ -33,17 +40,19 @@
                         ErrorMessage="Not a boolean expression"
                         ForeColor="Red"
                         ClientValidationFunction="validateBoolean"></asp:CustomValidator>
-                 
                 </div>
                 <div class="col-md-3">
+                    <asp:Label Text="Search Type" runat="server" Font-Bold="True"></asp:Label>
                     <asp:DropDownList ID="SearchTypeDropDownList" CssClass="form-control searchtype-list" runat="server" AutoPostBack="true" OnSelectedIndexChanged="SearchTypeChanged">
                     </asp:DropDownList>
                 </div>
             </div>
-            <p style="clear:both;"></p>
-            <asp:Button ID="SearchSubmitButton" class="btn btn-primary" runat="server" Text="Search" OnClick="SearchSubmitButton_Click" />
+                <div class="col-md-3">
+                   
+            <asp:Button ID="SearchSubmitButton" class="btn btn-default btn-primary" runat="server" Text="Search" OnClick="SearchSubmitButton_Click" />     
+                </div>
+            <p class="clear:both"></p>
 
-            <%--</form>--%>
         </div>
             </div>
         <p style="clear:both;"></p>

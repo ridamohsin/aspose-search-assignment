@@ -16,9 +16,9 @@ namespace Aspose.Search.Assignment.Helpers
         {
             List<string> searchTypes = new List<string>()
          {
-            CommonUtilities.SimpleSearch,
-            CommonUtilities.BooleanSearch,
-            CommonUtilities.RegexSearch
+            CommonValues.SimpleSearch,
+            CommonValues.BooleanSearch,
+            CommonValues.RegexSearch
          };
             return searchTypes;
         }

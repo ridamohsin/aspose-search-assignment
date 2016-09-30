@@ -43,8 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GroupDocs.Search">
-      <HintPath>..\..\GroupDocs.Search-for-.NET-master\Showcases\GroupDocs.Search-UI\packages\groupdocs-search-dotnet.1.2.0\lib\net2.0\GroupDocs.Search.dll</HintPath>
+    <Reference Include="GroupDocs.Search, Version=1.2.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\groupdocs-search-dotnet.1.2.0\lib\net2.0\GroupDocs.Search.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -236,7 +237,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\CommonUtilities.cs" />
+    <Compile Include="Helpers\CommonValues.cs" />
     <Compile Include="Helpers\CustomizedFieldExtractor.cs" />
     <Compile Include="Helpers\Search.cs" />
     <Compile Include="Helpers\UIBasedUtility.cs" />
