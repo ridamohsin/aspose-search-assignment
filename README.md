@@ -1,7 +1,7 @@
 # aspose-search-assignment
 A technical evaluation Assignment for Aspose that carries out different types of searches    
 The main purpose of this application is to use GroupDocs.Search API for .Net to perform three types of search namely Simple, Boolean and Regex.   
-The user can select the type of the search he wants to perform and the application performs that search and shows the results of that search in the same page.  
+The user can select the type of the search he wants to perform and the application performs that search and shows the results of that search on the same page.  
 
 ## Code Example
 
@@ -26,7 +26,6 @@ switch (searchType)
 
 This application makes use of the **GroupDocs.Search API for .Net v1.2.0**  [Download Link](http://www.groupdocs.com/downloads/search/net) to perform the search on documents
 
-
 ##Resources:
-1. [Video Link](https://www.dropbox.com/s/wi22sm0e55qp3mw/Home%20Page%20-%20Aspose%20Technical%20Evaluation%20Assignment%20-%20Mozilla%20Firefox%209_30_2016%204_03_09%20PM.mp4?dl=0) 
+1. [Video Link](https://www.dropbox.com/s/uf45qff3zlxd67k/Home%20Page%20-%20Aspose%20Technical%20Evaluation%20Assignment%20-%20Mozilla%20Firefox%2010_1_2016%2012_06_38%20AM.mp4?dl=0) 
 2. [Wiki Link](https://github.com/ridamohsin/aspose-search-assignment/wiki)
